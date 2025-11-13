@@ -90,7 +90,7 @@ class ChronoViewController: UIViewController,VPRangeSliderDelegate  {
         
         
         
-        timePreference.addTarget(self, action: #selector(ChronoViewController.switchChanged(_:)), for: UIControlEvents.valueChanged)
+        timePreference.addTarget(self, action: #selector(ChronoViewController.switchChanged(_:)), for: UIControl.Event.valueChanged)
         
         
         
