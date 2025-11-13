@@ -66,7 +66,7 @@ class WatchSessionManager: NSObject, WCSessionDelegate {
         // Note: if the device is paired, but your watch app is not installed
         // consider prompting the user to install it for a better experience
         
-        if let session = session , session.isPaired && session.isWatchAppInstalled {
+        if let session = session, session.isPaired && session.isWatchAppInstalled {
             return session
         }
         return nil
@@ -84,7 +84,7 @@ class WatchSessionManager: NSObject, WCSessionDelegate {
     
     func removeDataSourceChangedDelegate<T>(_ delegate: T) where T: DataSourceChangedDelegate, T: Equatable {
         for (index, dataSourceDelegate) in dataSourceChangedDelegates.enumerated() {
-            if let dataSourceDelegate = dataSourceDelegate as? T , dataSourceDelegate == delegate {
+            if let dataSourceDelegate = dataSourceDelegate as? T, dataSourceDelegate == delegate {
                 dataSourceChangedDelegates.remove(at: index)
                 break
             }
