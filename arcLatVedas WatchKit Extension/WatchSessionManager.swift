@@ -53,7 +53,7 @@ class WatchSessionManager: NSObject, WCSessionDelegate {
     
     func removeDataSourceChangedDelegate<T>(_ delegate: T) where T: DataSourceChangedDelegate, T: Equatable {
         for (index, dataSourceDelegate) in dataSourceChangedDelegates.enumerated() {
-            if let dataSourceDelegate = dataSourceDelegate as? T , dataSourceDelegate == delegate {
+            if let dataSourceDelegate = dataSourceDelegate as? T, dataSourceDelegate == delegate {
                 dataSourceChangedDelegates.remove(at: index)
                 break
             }

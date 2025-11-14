@@ -8,17 +8,6 @@
 
 import Foundation
 import CoreData
-fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l < r
-  case (nil, _?):
-    return true
-  default:
-    return false
-  }
-}
-
 
 //http://stackoverflow.com/questions/26613971/swift-coredata-warning-unable-to-load-class-named
 

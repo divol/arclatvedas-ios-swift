@@ -12,6 +12,8 @@ build/*
 **/xcuserdata/*
 **.xcbaseline
 
+# Backup files
+*.backup
 
 .DS_Store
 arcLatVedas WatchKit Extension/arcLatVedas WatchKit Extension.entitlements

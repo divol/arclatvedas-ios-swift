@@ -8,17 +8,6 @@
 
 import UIKit
 import CoreDataProxy
-fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l < r
-  case (nil, _?):
-    return true
-  default:
-    return false
-  }
-}
-
 
 class DetailEditDistanceViewController: UIViewController,UITableViewDataSource,UITableViewDelegate, resultDelegateProtocol,UITextFieldDelegate {
     
