@@ -68,7 +68,6 @@
 		E198870D1B0DDE92003F07FC /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E198870B1B0DDE92003F07FC /* Interface.storyboard */; };
 		E198870F1B0DDE92003F07FC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E198870E1B0DDE92003F07FC /* Images.xcassets */; };
 		E198872A1B0F22E2003F07FC /* CoreDataProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = E19887291B0F22E2003F07FC /* CoreDataProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E19887301B0F22E2003F07FC /* CoreDataProxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E19887251B0F22E2003F07FC /* CoreDataProxy.framework */; };
 		E198873C1B0F22E2003F07FC /* CoreDataProxy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E19887251B0F22E2003F07FC /* CoreDataProxy.framework */; };
 		E198873D1B0F22E2003F07FC /* CoreDataProxy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E19887251B0F22E2003F07FC /* CoreDataProxy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E19887451B0F2384003F07FC /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1468FB71AF778C50085223D /* SwiftyJSON.swift */; };
@@ -92,7 +91,6 @@
 		E1D1979F1AE914E800616F1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1D1979D1AE914E800616F1B /* Main.storyboard */; };
 		E1D197A11AE914E800616F1B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1D197A01AE914E800616F1B /* Images.xcassets */; };
 		E1D197A41AE914E800616F1B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1D197A21AE914E800616F1B /* LaunchScreen.xib */; };
-		E1D197B01AE914E800616F1B /* arclatvedasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D197AF1AE914E800616F1B /* arclatvedasTests.swift */; };
 		E1D1A7A11CE37F2E00C0EAD7 /* lieux.json in Resources */ = {isa = PBXBuildFile; fileRef = E1D1A7A01CE37F2E00C0EAD7 /* lieux.json */; };
 		E1E92A481CE375E200B5FD73 /* LieuAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E92A471CE375E200B5FD73 /* LieuAnnotation.swift */; };
 		E1F3AF4E1CD1093700E2827F /* arclatvedas.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = E198871F1B0F1F70003F07FC /* arclatvedas.entitlements */; };
@@ -116,40 +114,12 @@
 			remoteGlobalIDString = E19887031B0DDE92003F07FC;
 			remoteInfo = "arcLatVedas WatchKit App";
 		};
-		E16483602EE474E9000C58A0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E1D197871AE914E800616F1B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E19886F41B0DDE91003F07FC;
-			remoteInfo = "arcLatVedas WatchKit Extension";
-		};
-		E19887311B0F22E2003F07FC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E1D197871AE914E800616F1B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E19887241B0F22E2003F07FC;
-			remoteInfo = CoreDataProxy;
-		};
-		E19887331B0F22E2003F07FC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E1D197871AE914E800616F1B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E1D1978E1AE914E800616F1B;
-			remoteInfo = arclatvedas;
-		};
 		E198873A1B0F22E2003F07FC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E1D197871AE914E800616F1B /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E19887241B0F22E2003F07FC;
 			remoteInfo = CoreDataProxy;
-		};
-		E1D197AA1AE914E800616F1B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E1D197871AE914E800616F1B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E1D1978E1AE914E800616F1B;
-			remoteInfo = arclatvedas;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -248,7 +218,6 @@
 		E19887251B0F22E2003F07FC /* CoreDataProxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreDataProxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E19887281B0F22E2003F07FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E19887291B0F22E2003F07FC /* CoreDataProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataProxy.h; sourceTree = "<group>"; };
-		E198872F1B0F22E2003F07FC /* CoreDataProxyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataProxyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E19887371B0F22E2003F07FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E198874C1B0F26A1003F07FC /* CoreDataProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataProxy.swift; sourceTree = "<group>"; };
 		E198874E1B0F2D6C003F07FC /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -275,7 +244,6 @@
 		E1D1979E1AE914E800616F1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1D197A01AE914E800616F1B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E1D197A31AE914E800616F1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		E1D197A91AE914E800616F1B /* arclatvedasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = arclatvedasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1D197AE1AE914E800616F1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1D197AF1AE914E800616F1B /* arclatvedasTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = arclatvedasTests.swift; sourceTree = "<group>"; };
 		E1D1A7A01CE37F2E00C0EAD7 /* lieux.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lieux.json; sourceTree = "<group>"; };
@@ -304,26 +272,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E198872C1B0F22E2003F07FC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E19887301B0F22E2003F07FC /* CoreDataProxy.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E1D1978C1AE914E800616F1B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E198873C1B0F22E2003F07FC /* CoreDataProxy.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E1D197A61AE914E800616F1B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,11 +438,9 @@
 			isa = PBXGroup;
 			children = (
 				E1D1978F1AE914E800616F1B /* arclatvedas.app */,
-				E1D197A91AE914E800616F1B /* arclatvedasTests.xctest */,
 				E19886F51B0DDE91003F07FC /* arcLatVedas WatchKit Extension.appex */,
 				E19887041B0DDE92003F07FC /* arcLatVedas WatchKit App.app */,
 				E19887251B0F22E2003F07FC /* CoreDataProxy.framework */,
-				E198872F1B0F22E2003F07FC /* CoreDataProxyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -628,26 +579,6 @@
 			productReference = E19887251B0F22E2003F07FC /* CoreDataProxy.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		E198872E1B0F22E2003F07FC /* CoreDataProxyTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E19887421B0F22E2003F07FC /* Build configuration list for PBXNativeTarget "CoreDataProxyTests" */;
-			buildPhases = (
-				E198872B1B0F22E2003F07FC /* Sources */,
-				E198872C1B0F22E2003F07FC /* Frameworks */,
-				E198872D1B0F22E2003F07FC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E19887321B0F22E2003F07FC /* PBXTargetDependency */,
-				E19887341B0F22E2003F07FC /* PBXTargetDependency */,
-				E16483612EE474E9000C58A0 /* PBXTargetDependency */,
-			);
-			name = CoreDataProxyTests;
-			productName = CoreDataProxyTests;
-			productReference = E198872F1B0F22E2003F07FC /* CoreDataProxyTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		E1D1978E1AE914E800616F1B /* arclatvedas */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1D197B31AE914E800616F1B /* Build configuration list for PBXNativeTarget "arclatvedas" */;
@@ -668,24 +599,6 @@
 			productName = arclatvedas;
 			productReference = E1D1978F1AE914E800616F1B /* arclatvedas.app */;
 			productType = "com.apple.product-type.application";
-		};
-		E1D197A81AE914E800616F1B /* arclatvedasTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E1D197B61AE914E800616F1B /* Build configuration list for PBXNativeTarget "arclatvedasTests" */;
-			buildPhases = (
-				E1D197A51AE914E800616F1B /* Sources */,
-				E1D197A61AE914E800616F1B /* Frameworks */,
-				E1D197A71AE914E800616F1B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E1D197AB1AE914E800616F1B /* PBXTargetDependency */,
-			);
-			name = arclatvedasTests;
-			productName = arclatvedasTests;
-			productReference = E1D197A91AE914E800616F1B /* arclatvedasTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -719,12 +632,6 @@
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
-					E198872E1B0F22E2003F07FC = {
-						CreatedOnToolsVersion = 6.3.2;
-						LastSwiftMigration = 0800;
-						ProvisioningStyle = Automatic;
-						TestTargetID = E1D1978E1AE914E800616F1B;
-					};
 					E1D1978E1AE914E800616F1B = {
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 0800;
@@ -738,15 +645,9 @@
 							};
 						};
 					};
-					E1D197A81AE914E800616F1B = {
-						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0800;
-						ProvisioningStyle = Automatic;
-						TestTargetID = E1D1978E1AE914E800616F1B;
-					};
 				};
 			};
-			buildConfigurationList = E1D1978A1AE914E800616F1B /* Build configuration list for PBXProject "arclatvedas" */;
+			buildConfigurationList = E1D1978A1AE914E800616F1B /* Build configuration list for PBXProject "arclatvedas.app" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -761,11 +662,9 @@
 			projectRoot = "";
 			targets = (
 				E1D1978E1AE914E800616F1B /* arclatvedas */,
-				E1D197A81AE914E800616F1B /* arclatvedasTests */,
 				E19886F41B0DDE91003F07FC /* arcLatVedas WatchKit Extension */,
 				E19887031B0DDE92003F07FC /* arcLatVedas WatchKit App */,
 				E19887241B0F22E2003F07FC /* CoreDataProxy */,
-				E198872E1B0F22E2003F07FC /* CoreDataProxyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -798,13 +697,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E198872D1B0F22E2003F07FC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E1D1978D1AE914E800616F1B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -819,13 +711,6 @@
 				E1476A5C1CFF3338001090FB /* bip2.wav in Resources */,
 				E1476A5B1CFF3338001090FB /* bip.wav in Resources */,
 				E1D197A11AE914E800616F1B /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E1D197A71AE914E800616F1B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -882,13 +767,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E198872B1B0F22E2003F07FC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E1D1978B1AE914E800616F1B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -928,14 +806,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E1D197A51AE914E800616F1B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E1D197B01AE914E800616F1B /* arclatvedasTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -949,30 +819,10 @@
 			target = E19887031B0DDE92003F07FC /* arcLatVedas WatchKit App */;
 			targetProxy = E117CF3C1C205C6B004D6518 /* PBXContainerItemProxy */;
 		};
-		E16483612EE474E9000C58A0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E19886F41B0DDE91003F07FC /* arcLatVedas WatchKit Extension */;
-			targetProxy = E16483602EE474E9000C58A0 /* PBXContainerItemProxy */;
-		};
-		E19887321B0F22E2003F07FC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E19887241B0F22E2003F07FC /* CoreDataProxy */;
-			targetProxy = E19887311B0F22E2003F07FC /* PBXContainerItemProxy */;
-		};
-		E19887341B0F22E2003F07FC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E1D1978E1AE914E800616F1B /* arclatvedas */;
-			targetProxy = E19887331B0F22E2003F07FC /* PBXContainerItemProxy */;
-		};
 		E198873B1B0F22E2003F07FC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E19887241B0F22E2003F07FC /* CoreDataProxy */;
 			targetProxy = E198873A1B0F22E2003F07FC /* PBXContainerItemProxy */;
-		};
-		E1D197AB1AE914E800616F1B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E1D1978E1AE914E800616F1B /* arclatvedas */;
-			targetProxy = E1D197AA1AE914E800616F1B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1196,60 +1046,6 @@
 			};
 			name = Release;
 		};
-		E19887431B0F22E2003F07FC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: OLILOG Conseil (FF9F6L695S)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				DEVELOPMENT_TEAM = BMHEVTY2N8;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CoreDataProxyTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jack.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/arclatvedas.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/arclatvedas";
-			};
-			name = Debug;
-		};
-		E19887441B0F22E2003F07FC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: OLILOG Conseil (FF9F6L695S)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				DEVELOPMENT_TEAM = BMHEVTY2N8;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = CoreDataProxyTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jack.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/arclatvedas.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/arclatvedas";
-			};
-			name = Release;
-		};
 		E1D197B11AE914E800616F1B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1432,62 +1228,6 @@
 			};
 			name = Release;
 		};
-		E1D197B71AE914E800616F1B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: OLILOG Conseil (FF9F6L695S)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				DEVELOPMENT_TEAM = FF9F6L695S;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = arclatvedasTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jack.arclatvedas;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/arclatvedas.app/arclatvedas";
-			};
-			name = Debug;
-		};
-		E1D197B81AE914E800616F1B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: OLILOG Conseil (FF9F6L695S)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				DEVELOPMENT_TEAM = FF9F6L695S;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = arclatvedasTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jack.arclatvedas;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/arclatvedas.app/arclatvedas";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1518,16 +1258,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		E19887421B0F22E2003F07FC /* Build configuration list for PBXNativeTarget "CoreDataProxyTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E19887431B0F22E2003F07FC /* Debug */,
-				E19887441B0F22E2003F07FC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		E1D1978A1AE914E800616F1B /* Build configuration list for PBXProject "arclatvedas" */ = {
+		E1D1978A1AE914E800616F1B /* Build configuration list for PBXProject "arclatvedas.app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E1D197B11AE914E800616F1B /* Debug */,
@@ -1541,15 +1272,6 @@
 			buildConfigurations = (
 				E1D197B41AE914E800616F1B /* Debug */,
 				E1D197B51AE914E800616F1B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		E1D197B61AE914E800616F1B /* Build configuration list for PBXNativeTarget "arclatvedasTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E1D197B71AE914E800616F1B /* Debug */,
-				E1D197B81AE914E800616F1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
