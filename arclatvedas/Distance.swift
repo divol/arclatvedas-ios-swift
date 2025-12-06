@@ -30,9 +30,9 @@ open class Distance: NSManagedObject {
         var nsarr = self.relationship.allObjects as! [Hausse]
         
        nsarr.sort(by: { (s1: Hausse, s2: Hausse) -> Bool in
-            return Int(s1.name) < Int(s2.name)
+            return s1.name.count < s2.name.count
         })
-        
+    
         
         for  hausse:Hausse in nsarr{
 
@@ -46,7 +46,7 @@ open class Distance: NSManagedObject {
         var nsarray:[Hausse] = self.relationship.allObjects as! [Hausse]
         
         nsarray.sort(by: { (s1: Hausse, s2: Hausse) -> Bool in
-            return Int(s1.name) < Int(s2.name)
+            return s1.name.count < s2.name.count
         })
         return NSArray(array: nsarray)
     }

@@ -37,8 +37,7 @@ class WatchSessionManager: NSObject, WCSessionDelegate {
     fileprivate override init() {
         super.init()
     }
-    
-    fileprivate let session: WCSession = WCSession.default()
+    fileprivate let session: WCSession = WCSession.default
     
     fileprivate var dataSourceChangedDelegates = [DataSourceChangedDelegate]()
     

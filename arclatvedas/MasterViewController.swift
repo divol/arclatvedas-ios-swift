@@ -55,7 +55,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             error = error1
             // Replace this implementation with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            print("Unresolved error \(error), \(error?.userInfo)")
+            print("Unresolved error \(String(describing: error)), \(String(describing: error?.userInfo))")
             abort()
         }
         
@@ -162,7 +162,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
                 error = error1
                 // Replace this implementation with code to handle the error appropriately.
                 // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                print("Unresolved error \(error), \(error?.userInfo)")
+                print("Unresolved error \(String(describing: error)), \(String(describing: error?.userInfo))")
                 abort()
             }
 
@@ -198,7 +198,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             error = error1
             // Replace this implementation with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            print("Unresolved error \(error), \(error?.userInfo)")
+            print("Unresolved error \(String(describing: error)), \(String(describing: error?.userInfo))")
             abort()
         }
     }
@@ -223,7 +223,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             error = error1
             // Replace this implementation with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            print("Unresolved error \(error), \(error?.userInfo)")
+            print("Unresolved error \(String(describing: error)), \(String(describing: error?.userInfo))")
             abort()
         }
     }
@@ -410,7 +410,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         
     }
     
-    func pressedStat(_ sender: UIButton!) {
+    @objc func pressedStat(_ sender: UIButton!) {
         
         
         performSegue(withIdentifier: "statistique", sender: self)
@@ -439,11 +439,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         let ordre = object.value(forKey: "ordre") as? NSNumber
         if  ordre?.intValue ==  Table.scores.rawValue+1 {
             
-            let b:UIButton = UIButton(type: UIButtonType.system)
+            let b:UIButton = UIButton(type: UIButton.ButtonType.system)
             b.frame = CGRect(x: 200 ,y: 0 ,width: 100, height:cell.contentView.frame.height)
             b.backgroundColor = UIColor.white
-            b.setTitle( "Graph", for: UIControlState())
-            b.setTitleColor(UIColor.black, for: UIControlState())
+            b.setTitle( "Graph", for: UIControl.State())
+            b.setTitleColor(UIColor.black, for: UIControl.State())
             b.tag = 666
             b.addTarget(self, action: #selector(MasterViewController.pressedStat(_:)), for: .touchUpInside)
             
@@ -485,6 +485,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             tableView.insertRows(at: [newIndexPath!], with: .fade)
 //        default:
 //            return
+        @unknown default:
+            fatalError()
         }
     }
     

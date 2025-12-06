@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 import WatchKit
 import CoreData
 
@@ -39,21 +38,6 @@ class TirInterfaceController: WKInterfaceController,DataSourceChangedDelegate {
 
     }
     
-    
-    
-    override   func handleUserActivity(_ userInfo: [AnyHashable: Any]?){
-        super.handleUserActivity(userInfo)
-        
-        
-        
-        
-        // Assume the app delegate has a text field to display the activity information
-      //  NSLog("handleUserActivity %@", userInfo!);
-        
-    }
-    
-    
-
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
@@ -77,7 +61,12 @@ class TirInterfaceController: WKInterfaceController,DataSourceChangedDelegate {
     func doRefresh(){
         
         if let tir = curTir {
-            self.updateUserActivity("com.jack.arclatvedas.update", userInfo: ["key1": ["yo":"dawg"]], webpageURL: nil)
+            // Create an NSUserActivity and update it (watchOS 5+ API)
+            let activityType = "com.jack.arclatvedas.update"
+            let activity = NSUserActivity(activityType: activityType)
+            activity.userInfo = ["key1": ["yo": "dawg"]]
+            activity.title = "Update"
+            self.update(activity)
 
             DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async { // 1
                 DispatchQueue.main.async { // 2
@@ -92,10 +81,6 @@ class TirInterfaceController: WKInterfaceController,DataSourceChangedDelegate {
                 }
             }
 
-            
-            
-
-            
         }
         
     }
@@ -233,3 +218,4 @@ class TirInterfaceController: WKInterfaceController,DataSourceChangedDelegate {
     
     
 }
+

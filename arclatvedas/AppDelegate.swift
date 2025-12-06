@@ -78,7 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     }
 
     
-    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool{
+    private func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool{
         
         
         let type =   userActivity.activityType
@@ -151,7 +151,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 //            // Report any error we got.
 //            var dict = [String: AnyObject]()
 //            dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
-//            dict[NSLocalizedFailureReasonErrorKey] = failureReason
+//            dict[NSLocalizedFailureReasonKey] = failureReason
 //            dict[NSUnderlyingErrorKey] = error
 //            error = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
 //            // Replace this with code to handle the error appropriately.
@@ -204,16 +204,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
                     // 2
                     let hello = "hello, back"
                     
-                    
-//                    let wutils:WatchUtils = WatchUtils()
-//                    
-//                    let titi = wutils.getLastTir()
-//                    NSLog("\(titi.getTotal())")
-//
-//                    
-                    
-                    // 3
-                    reply(["response": NSKeyedArchiver.archivedData(withRootObject: hello)])
+                    // 3 (modern archiving API with secure coding)
+                    do {
+                        let data = try NSKeyedArchiver.archivedData(withRootObject: hello, requiringSecureCoding: true)
+                        reply(["response": data])
+                    } catch {
+                        // If archiving fails, fall back to sending the raw string
+                        reply(["response": hello])
+                    }
                     return
                 }
             }

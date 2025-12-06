@@ -124,12 +124,12 @@ class DetailEditTirViewController: UIViewController,UITableViewDataSource,UITabl
         
     }
     
-    func editObject (_ sender: AnyObject) {
+    @objc func editObject (_ sender: AnyObject) {
         if let detail: Tir = self.detailItem {
-            let alert = UIAlertController(title: "Edit", message: "Message", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "Edit", message: "Message", preferredStyle: UIAlertController.Style.alert)
             
             
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action: UIAlertAction) in
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction) in
                 
                 var texts = alert.textFields
                for i in 0 ..< texts!.count{
@@ -153,7 +153,7 @@ class DetailEditTirViewController: UIViewController,UITableViewDataSource,UITabl
 
             }))
             let locastr=NSLocalizedString("Cancel", comment:"data")
-            alert.addAction(UIAlertAction(title: locastr, style: UIAlertActionStyle.cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: locastr, style: UIAlertAction.Style.cancel, handler: nil))
             alert.addTextField(configurationHandler: {(textField: UITextField)  in
                 textField.placeholder = "Localication:"
                 textField.isSecureTextEntry = false
@@ -335,7 +335,7 @@ class DetailEditTirViewController: UIViewController,UITableViewDataSource,UITabl
         return true
     }
     
-     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             if let detail: Tir = self.detailItem {
                 DataManager.deleteManagedObject(detail.volees.object(at: (indexPath as NSIndexPath).row) as! NSManagedObject)
@@ -418,9 +418,9 @@ class DetailEditTirViewController: UIViewController,UITableViewDataSource,UITabl
              b.backgroundColor = c
         
             b.tag = tags[(indexPath as NSIndexPath).item]
-            b.setTitle( valeurs[(indexPath as NSIndexPath).item], for: UIControlState())
+        b.setTitle( valeurs[(indexPath as NSIndexPath).item], for: UIControl.State())
 //            b.setTitleColor(UIColor.blackColor(), forState: .Normal)
-            b.setTitleColor(textcolors[(indexPath as NSIndexPath).item], for: UIControlState())
+        b.setTitleColor(textcolors[(indexPath as NSIndexPath).item], for: UIControl.State())
 
             b.addTarget(self, action: #selector(DetailEditTirViewController.pressed(_:)), for: .touchUpInside)
         

@@ -50,7 +50,7 @@ class ListeViewController : UITableViewController, NSFetchedResultsControllerDel
             error = error1
             // Replace this implementation with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            print("Unresolved error \(error), \(error?.userInfo)")
+            print("Unresolved error \(String(describing: error)), \(String(describing: error?.userInfo))")
             abort()
         }
         
@@ -196,7 +196,7 @@ class ListeViewController : UITableViewController, NSFetchedResultsControllerDel
     }
 
     
-    func insertNewObject(_ sender: AnyObject) {
+    @objc func insertNewObject(_ sender: AnyObject) {
         let context = self.fetchedResultsController.managedObjectContext
         let entity = self.fetchedResultsController.fetchRequest.entity!
         let newManagedObject = NSEntityDescription.insertNewObject(forEntityName: entity.name!, into: context) 
@@ -235,7 +235,7 @@ class ListeViewController : UITableViewController, NSFetchedResultsControllerDel
             error = error1
             // Replace this implementation with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            print("Unresolved error \(error), \(error?.userInfo)")
+            print("Unresolved error \(String(describing: error)), \(String(describing: error?.userInfo))")
             abort()
         }
     }
@@ -396,7 +396,7 @@ class ListeViewController : UITableViewController, NSFetchedResultsControllerDel
         return true
     }
     
-        override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
             if editingStyle == .delete {
                 let context = self.fetchedResultsController.managedObjectContext
                 context.delete(self.fetchedResultsController.object(at: indexPath) as! NSManagedObject)
@@ -408,7 +408,7 @@ class ListeViewController : UITableViewController, NSFetchedResultsControllerDel
                     error = error1
                     // Replace this implementation with code to handle the error appropriately.
                     // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                    print("Unresolved error \(error), \(error?.userInfo)")
+                    print("Unresolved error \(String(describing: error)), \(String(describing: error?.userInfo))")
                     abort()
                 }
             }
@@ -444,13 +444,13 @@ class ListeViewController : UITableViewController, NSFetchedResultsControllerDel
         
         
         //let b:UIButton = UIButton(frame:cframe)
-        let b:UIButton = UIButton(type: UIButtonType.system)
+        let b:UIButton = UIButton(type: UIButton.ButtonType.system)
         b.frame = CGRect(x: cell.contentView.frame.width-100 ,y: 0 ,width: 100, height:cell.contentView.frame.height)
         b.backgroundColor = UIColor.white
         let locastr=NSLocalizedString("Blason", comment:"data")
         
-        b.setTitle( locastr, for: UIControlState())
-        b.setTitleColor(UIColor.black, for: UIControlState())
+        b.setTitle( locastr, for: UIControl.State())
+        b.setTitleColor(UIColor.black, for: UIControl.State())
         
         b.addTarget(self, action: #selector(ListeViewController.pressedBlason(_:)), for: .touchUpInside)
         b.tag = (indexPath as NSIndexPath).row
@@ -469,10 +469,10 @@ class ListeViewController : UITableViewController, NSFetchedResultsControllerDel
 
     
     
-    func pressedBlason(_ sender: UIButton!) {
+    @objc func pressedBlason(_ sender: UIButton!) {
         
        let idx =  IndexPath(row: sender.tag, section: 0)
-        self.tableView.selectRow(at: idx, animated: false, scrollPosition: UITableViewScrollPosition.none)
+        self.tableView.selectRow(at: idx, animated: false, scrollPosition: UITableView.ScrollPosition.none)
         
         
        performSegue(withIdentifier: "blason", sender: self)
@@ -532,6 +532,8 @@ class ListeViewController : UITableViewController, NSFetchedResultsControllerDel
             tableView.deleteRows(at: [indexPath!], with: .fade)
             tableView.insertRows(at: [newIndexPath!], with: .fade)
         
+        @unknown default:
+            fatalError()
         }
     }
     

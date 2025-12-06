@@ -47,7 +47,11 @@ var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult> {
         error = error1
         // Replace this implementation with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        print("Unresolved error \(error), \(error!.userInfo)")
+        if let error = error {
+            print("Unresolved error \(error), \(error.userInfo)")
+        } else {
+            print("Unresolved error (unknown NSError)")
+        }
         abort()
     }
     
@@ -73,11 +77,9 @@ var _fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
     _fetchedResultsController=nil
        var object:Tir?
         tablename = "Tir";
-    guard let ff:NSFetchedResultsController<NSFetchRequestResult>  = self.fetchedResultsController else{
-        return nil;
-    }
+    let ff: NSFetchedResultsController<NSFetchRequestResult> = self.fetchedResultsController
     
-    let cocos: [Tir] = ff.fetchedObjects as! [Tir]
+    let cocos: [Tir] = (ff.fetchedObjects as? [Tir]) ?? []
         
         if  cocos.count > 0 {
             
@@ -165,7 +167,11 @@ var _fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
             error = error1
             // Replace this implementation with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            print("Unresolved error \(error), \(error?.userInfo)")
+            if let error = error {
+                print("Unresolved error \(error), \(error.userInfo)")
+            } else {
+                print("Unresolved error (unknown NSError)")
+            }
             abort()
         }
         
@@ -175,12 +181,3 @@ var _fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
     
 
 }
-
-
-
-
-
-
-
-
-

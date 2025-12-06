@@ -7,11 +7,11 @@
 //
 
 import UIKit
+import WebKit
 
 class WebViewController: UIViewController {
     
-    @IBOutlet weak var web: UIWebView!
-    
+    @IBOutlet weak var web: WKWebView!
     
     var detailItem: AnyObject? {
         didSet {
@@ -23,15 +23,15 @@ class WebViewController: UIViewController {
     func configureView() {
         // Update the user interface for the detail item.
         if let detail: AnyObject = self.detailItem {
-            
             let value = detail.value(forKey: "name") as! String
             self.navigationItem.title = NSLocalizedString(value, comment:"data")
             
             if let web = self.web {
-                 let page = detail.value(forKey: "url") as! String
-                //let page :String = value.description
-                let request: URLRequest = URLRequest(url: URL(string: page)!)
-                web.loadRequest(request)
+                let page = detail.value(forKey: "url") as! String
+                if let url = URL(string: page) {
+                    let request = URLRequest(url: url)
+                    web.load(request)
+                }
             }
         }
     }
@@ -46,7 +46,4 @@ class WebViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 }
-

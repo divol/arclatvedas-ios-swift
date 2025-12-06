@@ -74,17 +74,6 @@ class InterfaceController: WKInterfaceController,DataSourceChangedDelegate {
         WatchSessionManager.sharedManager.transferUserInfo(["insertNewTir" : 0 as AnyObject])
     }
     
-    
- override   func handleUserActivity(_ userInfo: [AnyHashable: Any]?){
-
-    
-    
-    
-    // Assume the app delegate has a text field to display the activity information
-  //  NSLog("watch user info %@", userInfo!);
-
-    }
-    
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
@@ -154,4 +143,3 @@ class InterfaceController: WKInterfaceController,DataSourceChangedDelegate {
 //                }
 //
 //        })
-

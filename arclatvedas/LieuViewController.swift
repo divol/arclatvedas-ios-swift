@@ -8,10 +8,7 @@
 
 import UIKit
 import MapKit
-
-
-
-
+import CoreLocation
 
 class LieuViewController: UIViewController {
     
@@ -74,8 +71,8 @@ class LieuViewController: UIViewController {
     
     let regionRadius: CLLocationDistance = 1000
     func centerMapOnLocation(_ location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
-                                                                  regionRadius * 2.0, regionRadius * 2.0)
+        let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
+                                                  latitudinalMeters: regionRadius * 2.0, longitudinalMeters: regionRadius * 2.0)
         map.setRegion(coordinateRegion, animated: true)
     }
 
@@ -83,10 +80,23 @@ class LieuViewController: UIViewController {
     
     var locationManager = CLLocationManager()
     func checkLocationAuthorizationStatus() {
-        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-            map.showsUserLocation = true
+        let status: CLAuthorizationStatus
+        if #available(iOS 14.0, *) {
+            status = locationManager.authorizationStatus
         } else {
+            status = CLLocationManager.authorizationStatus()
+        }
+        
+        switch status {
+        case .authorizedWhenInUse, .authorizedAlways:
+            map.showsUserLocation = true
+            locationManager.startUpdatingLocation()
+        case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
+        case .denied, .restricted:
+            map.showsUserLocation = false
+        @unknown default:
+            map.showsUserLocation = false
         }
     }
 
@@ -120,7 +130,7 @@ class LieuViewController: UIViewController {
         super.viewDidLoad()
         
         map.delegate = self
-        
+        locationManager.delegate = self
         
         centerMapOnLocation(initialLocation)
      //   let salle = LieuAnnotation(title: "Salle",sub:"", coordinate: CLLocationCoordinate2D(latitude: 43.567051, longitude: 3.898359))
@@ -180,4 +190,15 @@ extension LieuViewController: MKMapViewDelegate {
 
 }
 
-
+// MARK: CLLocationManagerDelegate
+extension LieuViewController: CLLocationManagerDelegate {
+    // iOS 14+
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        checkLocationAuthorizationStatus()
+    }
+    
+    // iOS < 14
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        checkLocationAuthorizationStatus()
+    }
+}

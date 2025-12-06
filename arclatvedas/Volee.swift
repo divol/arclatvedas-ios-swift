@@ -30,8 +30,7 @@ open    var scores:NSMutableArray {
                     self.volee = "[]"
                 }
             
-            var json:JSON = JSON(data:self.volee.data(using: String.Encoding.utf8)!);
-    
+            let json = (try? JSON(data: self.volee.data(using: .utf8)!)) ?? JSON([])
             //
             let toto = json.arrayObject
     

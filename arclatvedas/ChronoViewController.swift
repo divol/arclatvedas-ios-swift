@@ -45,7 +45,7 @@ class ChronoViewController: UIViewController,VPRangeSliderDelegate  {
             
             
             splitViewController.presentsWithGesture = false // SplitView won't recognize right swipe
-            splitViewController.preferredDisplayMode = .primaryHidden
+            splitViewController.preferredDisplayMode = UISplitViewController.DisplayMode.secondaryOnly
         }
 
         
@@ -101,9 +101,9 @@ class ChronoViewController: UIViewController,VPRangeSliderDelegate  {
     func playSound(_ file: URL) {
         do {
             try audioPlayer = AVAudioPlayer(contentsOf: file)
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord)
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord)
             try AVAudioSession.sharedInstance().setActive(true)
-            try AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSessionPortOverride.speaker)
+            try AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSession.PortOverride.speaker)
             audioPlayer.play()
         } catch {
             print(error)
@@ -119,7 +119,7 @@ class ChronoViewController: UIViewController,VPRangeSliderDelegate  {
         self.view.backgroundColor = color
     }
     
-    func firstTimer() {
+    @objc func firstTimer() {
         count -= 1
         if (count <= 0) {count = 0}
         updateLabel()
@@ -134,12 +134,12 @@ class ChronoViewController: UIViewController,VPRangeSliderDelegate  {
         }
     }
     
-    func manageTimer() {
+  @objc  func manageTimer() {
         
         if ("STOP".compare((self.startstopButton.titleLabel?.text)!)==ComparisonResult.orderedSame){
-            self.startstopButton.setTitle("DÉBUT", for: UIControlState())
+            self.startstopButton.setTitle("DÉBUT", for: UIControl.State())
         }else{
-            self.startstopButton.setTitle("STOP", for: UIControlState())
+            self.startstopButton.setTitle("STOP", for: UIControl.State())
         }
         
         if (timer.isValid) {
@@ -160,7 +160,7 @@ class ChronoViewController: UIViewController,VPRangeSliderDelegate  {
         }
     }
     
-    func timerAction() {
+@objc    func timerAction() {
         count -= 1
         if (count <= 0) {
             // Play sound
@@ -168,7 +168,7 @@ class ChronoViewController: UIViewController,VPRangeSliderDelegate  {
             self.view.backgroundColor = UIColor.red.withAlphaComponent(0.70)
             timer.invalidate()
             initViewWithValue(mincount, andColor: UIColor.red.withAlphaComponent(0.70))
-            self.startstopButton.setTitle("DÉBUT", for: UIControlState())
+            self.startstopButton.setTitle("DÉBUT", for: UIControl.State())
             timePreference.isEnabled=true
             rangeSlider.partialyHide(false)
 
@@ -206,7 +206,7 @@ class ChronoViewController: UIViewController,VPRangeSliderDelegate  {
     
     
     //MARK: - switchChanged
-    func switchChanged(_ mySwitch: UISwitch) {
+@objc    func switchChanged(_ mySwitch: UISwitch) {
         let amax:CGFloat = self.timePreference.isOn ? 240.0 : 120.0
         if amax-CGFloat(maxcount) < 0 {
             maxcount = 30

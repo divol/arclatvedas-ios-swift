@@ -24,4 +24,11 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         // Use this method to pause ongoing tasks, disable timers, etc.
     }
     
+    // New in place of deprecated WKInterfaceController.handleUserActivity(_:)
+    func handleUserActivity(_ userInfo: [AnyHashable : Any]?) {
+        // Route the activity to the current controller if needed.
+        // Example: you could inspect userInfo and update UI or navigate.
+        // If you need to reach a specific controller:
+        // WKInterfaceController.reloadRootControllers(withNames: ["TirInterfaceController"], contexts: [userInfo as Any])
+    }
 }

@@ -23,26 +23,31 @@ class ArrowChooserCell: UITableViewCell {
     func configureView() {
         if let fleche = arrow {
         
-         if let detail = self.texte {
-        //    NSLog(fleche.grain.description)
-            var lataille="-\n"
-            
-            if let t:NSNumber = fleche.taille {
+            if let detail = self.texte {
+                //    NSLog(fleche.grain.description)
+                var lataille = "-\n"
                 
-                if t != 0 {
+                // fleche.taille is non-optional NSNumber, compare its numeric value
+                if fleche.taille.intValue != 0 {
                     lataille = "\(fleche.taille)\n"
                 }
+                
+                let modelstr = NSLocalizedString("Modele: ", comment:"data")
+                let nomstr = NSLocalizedString("nom: ", comment:"data")
+                let grainstr = NSLocalizedString("Grain: ", comment:"data")
+                let spinstr = NSLocalizedString("Spin: ", comment:"data")
+                let taillestr = NSLocalizedString("Taille: ", comment:"data")
+                let makerstr = NSLocalizedString("Fabricant: ", comment:"data")
+                
+                // Build the string with standard interpolation/concatenation
+                detail.text =
+                    "\(modelstr)\(fleche.modele)\n" +
+                    "\(nomstr)\(fleche.name)\n" +
+                    "\(grainstr)\(fleche.grain) " +
+                    "\(spinstr)\(fleche.spin) " +
+                    "\(taillestr)\(lataille)" +
+                    "\(makerstr)\(fleche.fabricant)\n"
             }
-            
-            let modelstr=NSLocalizedString("Modele: ", comment:"data")
-            let nomstr=NSLocalizedString("nom: ", comment:"data")
-            let grainstr=NSLocalizedString("Grain: ", comment:"data")
-            let spinstr=NSLocalizedString("Spin: ", comment:"data")
-            let taillestr=NSLocalizedString("Taille: ", comment:"data")
-            let makerstr=NSLocalizedString("Fabricant: ", comment:"data")
-            
-            detail.text = String(stringInterpolation: modelstr,"\(fleche.modele)\n",nomstr,"\(fleche.name)\n", grainstr,"\(fleche.grain) ",spinstr,"\(fleche.spin) ",taillestr,lataille,makerstr,"\(fleche.fabricant)\n")
-        }
         }
         
     }

@@ -110,7 +110,7 @@ class DetailEditFlecheViewController: UIViewController {
     
 
     
-    func saveObject(_ sender: AnyObject) {
+    @objc func saveObject(_ sender: AnyObject) {
         if let detail: NSManagedObject = self.detailItem as? NSManagedObject{
             
             

@@ -81,7 +81,7 @@ class TargetController: UIViewController,DCDMagnifyingGlassViewDelegate ,UIPicke
         
     }
     
-    func tapAction(_ sender: UITapGestureRecognizer) {
+    @objc func tapAction(_ sender: UITapGestureRecognizer) {
         
         magnifyingViewVisible = !magnifyingViewVisible
         var hauteur:CGFloat = 0.0
@@ -202,26 +202,6 @@ class TargetController: UIViewController,DCDMagnifyingGlassViewDelegate ,UIPicke
              voleecompte?.text = "\(detail.volees.count)"
             }
             refreshVoleeLabel()
-//        case 3000 :
-//            UIView.transitionWithView(self.statview, duration: 0.325, options: .TransitionFlipFromLeft | .CurveEaseInOut, animations: { () -> Void in
-//                if  self.statview.alpha == 0.0 {
-//                    if let detail: Tir = self.detailItem {
-//                        
-//                        if detail.volees.count > 1 {
-//                            self.buildChart()
-//                            self.statview.alpha=1.0
-//                            self.tableview.alpha=0.0
-//                        }
-//                        
-//                    }
-//                }else{
-//                    self.statview.alpha=0.0
-//                    self.tableview.alpha=1.0
-//                }
-//                
-//                }, completion: { (Bool) -> Void in
-//                    
-//            })
             
             
         default :
@@ -320,14 +300,14 @@ class TargetController: UIViewController,DCDMagnifyingGlassViewDelegate ,UIPicke
         }
     }
     
-    func editObject (_ sender: AnyObject) {
+    @objc func editObject (_ sender: Any?) {
         if let detail: Tir = self.detailItem {
-            let alert = UIAlertController(title: "Description", message: "", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "Description", message: "", preferredStyle: UIAlertController.Style.alert)
             
             
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action: UIAlertAction) in
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction) in
                 
-                var texts = alert.textFields as [UITextField]?
+                let texts = alert.textFields as [UITextField]?
                 for i in 0 ..< texts!.count{
                     
                     let textField: UITextField = texts![i]
@@ -349,7 +329,7 @@ class TargetController: UIViewController,DCDMagnifyingGlassViewDelegate ,UIPicke
                 
             }))
              let locastr=NSLocalizedString("Cancel", comment:"data")
-            alert.addAction(UIAlertAction(title: locastr, style: UIAlertActionStyle.cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: locastr, style: UIAlertAction.Style.cancel, handler: nil))
             alert.addTextField(configurationHandler: {(textField: UITextField)  in
                 textField.placeholder = "Localication:"
                 textField.isSecureTextEntry = false
@@ -370,27 +350,6 @@ class TargetController: UIViewController,DCDMagnifyingGlassViewDelegate ,UIPicke
             })
 
             
-
-//              var pickerFrame: CGRect = CGRectMake(0, 0, alert.view.frame.size.width, 50);
-//            editPicker = UIPickerView(frame: pickerFrame)
-//            editPicker.setTranslatesAutoresizingMaskIntoConstraints(false)
-//
-//            editPicker.delegate = self
-//            editPicker.dataSource=self
-//            var views: [String: AnyObject] = [:]
-//
-//            
-//            
-//            alert.view.addSubview(editPicker)
-//            
-//            views["editPicker"] = editPicker
-//
-//            alert.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[editPicker]-|", options: nil, metrics: nil, views: views))
-//            
-//            
-//            alert.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-[editPicker]-|", options: nil, metrics: nil, views: views))
-//
-//            editPicker.updateConstraintsIfNeeded()
             self.present(alert, animated: true, completion: nil)
         }
         
@@ -403,23 +362,7 @@ class TargetController: UIViewController,DCDMagnifyingGlassViewDelegate ,UIPicke
             
             self.view.resignFirstResponder()
             
-            //            let dateFormat:NSDateFormatter = NSDateFormatter()
-            //            dateFormat.dateStyle = NSDateFormatterStyle.ShortStyle
-            //            dateFormat.dateFormat="dd-MM-yy"
-            //            let ladate :NSDate = dateFormat.dateFromString("")!
-            //
-            
             DataManager.saveManagedContext()
-            //            if let cont:AnyObject = self.context {
-            //                var error: NSError? = nil
-            //                if !cont.save(&error) {
-            //                    // Replace this implementation with code to handle the error appropriately.
-            //                    // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            //                    //println("Unresolved error \(error), \(error.userInfo)")
-            //                    abort()
-            //                }
-            //                
-            //            }
             
             if let detail: Tir = self.detailItem {
                 totalLabel?.text = detail.getTotal().description
@@ -441,10 +384,8 @@ class TargetController: UIViewController,DCDMagnifyingGlassViewDelegate ,UIPicke
         if  let mainwindow = app.delegate?.window {
             let splitViewController = mainwindow!.rootViewController as! UISplitViewController
         
-        
-        
-            splitViewController.presentsWithGesture = false // SplitView won't recognize right swipe
-            splitViewController.preferredDisplayMode = .primaryHidden
+            // splitViewController.presentsWithGesture = false // removed on modern SDKs
+            splitViewController.preferredDisplayMode = .secondaryOnly
         }
         
         
@@ -640,6 +581,4 @@ class TargetController: UIViewController,DCDMagnifyingGlassViewDelegate ,UIPicke
     }
     
 }
-
-
 

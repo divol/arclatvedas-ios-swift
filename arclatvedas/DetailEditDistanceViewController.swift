@@ -75,7 +75,7 @@ class DetailEditDistanceViewController: UIViewController,UITableViewDataSource,U
             var nsarray:[Hausse] = detail.relationship.allObjects as! [Hausse]
             
             nsarray.sort(by: { (s1: Hausse, s2: Hausse) -> Bool in
-                return Int(s1.name) < Int(s2.name)
+                return (s1.name.count < s2.name.count)
             })
 
 
@@ -90,7 +90,7 @@ class DetailEditDistanceViewController: UIViewController,UITableViewDataSource,U
     
     
     
-    func changeUnit(_ sender: UISegmentedControl) {
+    @objc func changeUnit(_ sender: UISegmentedControl) {
         if let detail: AnyObject = self.detailItem  {
         switch sender.selectedSegmentIndex {
         case 0:
@@ -116,7 +116,7 @@ class DetailEditDistanceViewController: UIViewController,UITableViewDataSource,U
         }
     }
     
-    func saveObject(_ sender: AnyObject) {
+    @objc func saveObject(_ sender: AnyObject) {
         if let detail: Distance = self.detailItem  {
             
             let ladate :Date = Date()
